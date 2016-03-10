@@ -26,6 +26,9 @@ The elements prop is the MOST important prop to make work that. It is an array o
     {label: 'My test', value: 'test'}
 ]
 ```
+"isLoop"
+
+A simple flag, pass true to never block your range button and make loop when you arrive to the limit of the array. Or pass false to block
 
 "defaultValue":
 
