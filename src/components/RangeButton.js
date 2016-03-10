@@ -21,8 +21,6 @@ export default React.createClass({
                 }
             }
         );
-
-        console.log(this.currentElement);
     },
     leftClicked() {
         if (this.currentElement - 1 >= 0) {

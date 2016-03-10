@@ -74,9 +74,9 @@ ___
 <RangeButton defaultValue="pt"
                   elements={[
                               {label: 'Español', value: 'es'},
-                              {label: 'Ingles', value: 'en'},
-                              {label: 'Portugues', value: 'pt'}
-                             ];}
+                              {label: 'English', value: 'en'},
+                              {label: 'Francais', value: 'fr'}
+                             ]}
                   callbackGlobal={function(value){
                   console.log(value);
                   }}
