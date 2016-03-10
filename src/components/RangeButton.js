@@ -6,6 +6,7 @@ export default React.createClass({
         defaultValue: React.PropTypes.string.isRequired,
         elements: React.PropTypes.array.isRequired,
         context: React.PropTypes.object.isRequired,
+        isLoop: React.PropTypes.bool.isRequired,
         customClass: React.PropTypes.string,
         callbackGlobal: React.PropTypes.func,
         callbackLeft: React.PropTypes.func,
@@ -27,6 +28,10 @@ export default React.createClass({
             this.currentElement = this.currentElement - 1;
             this.props.callbackLeft ? this.props.callbackLeft.call(this.props.context, this.props.elements[this.currentElement].value) : this.props.callbackGlobal.call(this.props.context, this.props.elements[this.currentElement].value);
             this.forceUpdate();
+        } else if (this.props.isLoop) {
+            this.currentElement = this.props.elements.length - 1;
+            this.props.callbackRight ? this.props.callbackRight.call(this.props.context, this.props.elements[this.currentElement].value) : this.props.callbackGlobal.call(this.props.context, this.props.elements[this.currentElement].value);
+            this.forceUpdate();
         }
     },
 
@@ -35,13 +40,17 @@ export default React.createClass({
             this.currentElement = this.currentElement + 1;
             this.props.callbackRight ? this.props.callbackRight.call(this.props.context, this.props.elements[this.currentElement].value) : this.props.callbackGlobal.call(this.props.context, this.props.elements[this.currentElement].value);
             this.forceUpdate();
+        } else if (this.props.isLoop) {
+            this.currentElement = 0;
+            this.props.callbackRight ? this.props.callbackRight.call(this.props.context, this.props.elements[this.currentElement].value) : this.props.callbackGlobal.call(this.props.context, this.props.elements[this.currentElement].value);
+            this.forceUpdate();
         }
     },
 
     isBlockedStyle(side) {
-        if (side === 'left' && this.currentElement === 0) {
+        if (side === 'left' && this.currentElement === 0 && !this.props.isLoop) {
             return 'disabled';
-        } else if (side === 'right' && this.currentElement === this.props.elements.length) {
+        } else if (side === 'right' && this.currentElement === this.props.elements.length && !this.props.isLoop) {
             return 'disabled';
         }
 
@@ -61,3 +70,4 @@ export default React.createClass({
         );
     }
 });
+
