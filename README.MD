@@ -72,8 +72,14 @@ ___
 ##FULL RANGEBUTTON CREATION CODE:
 ```jsx
 <RangeButton defaultValue="pt"
-                  elements={languages}
-                  callbackGlobal={makeSomeNoise}
+                  elements={[
+                              {label: 'Español', value: 'es'},
+                              {label: 'Ingles', value: 'en'},
+                              {label: 'Portugues', value: 'pt'}
+                             ];}
+                  callbackGlobal={function(value){
+                  console.log(value);
+                  }}
                   context={this}
                   customClass={'language-btn'}
      />
