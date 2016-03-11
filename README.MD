@@ -1,4 +1,5 @@
-#RANGE BUTTON REACT COMPONENT
+
+#RANGE BUTTON REACT COMPONENT - [DEMO HERE](http://carlesnunez.github.io/react-range-button/src/example/index.html)
 
 The following example was created to work as a react component with ES6, pay atention in that, is important
 ---
@@ -87,3 +88,4 @@ ___
                   customClass={'language-btn'}
      />
 ```
+[DEMO HERE] (http://carlesnunez.github.io/react-range-button/src/example/index.html)
