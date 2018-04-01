@@ -1,9 +1,9 @@
 
-#RANGE BUTTON REACT COMPONENT - [DEMO HERE](http://carlesnunez.github.io/react-range-button/src/example/index.html)
+# RANGE BUTTON REACT COMPONENT - [DEMO HERE](http://carlesnunez.github.io/react-range-button/src/example/index.html)
 
 The following example was created to work as a react component with ES6, pay atention in that, is important
 ---
-##Needed packages to work:
+## Needed packages to work:
  
  * React, of course
  * Babelify or another transpiler from ES6 to ES5 
@@ -58,7 +58,7 @@ Then we modify our left button css:
 As you can see wee put .range-button.range-button-language to tell ONLY to our range-button-language what style should take.
 
 
-##HOW CAN I SET WHAT SUCCEDED WHEN I CLICK TO MY BUTTONS?
+## HOW CAN I SET WHAT SUCCEDED WHEN I CLICK TO MY BUTTONS?
 
 Off course, our component can get callbacks and execute them when a click occurs passing 3 different types of callbacks.
 
@@ -73,7 +73,7 @@ We can, also pass the context of actuation of our callbacks using the context pr
 
 ___
 
-##FULL RANGEBUTTON CREATION CODE:
+## FULL RANGEBUTTON CREATION CODE:
 ```jsx
 <RangeButton defaultValue="pt"
                   elements={[
